@@ -4,5 +4,7 @@
     <string name="app_name">Library-demo</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    
+    <string name="download_btn">下载用车邦</string>
 
 </resources>
