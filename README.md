@@ -1,4 +1,4 @@
 library-demo
 ============
 
-演示demo中工具类的使用
+演示library中工具类的使用
