@@ -43,7 +43,7 @@ public class DownloadManagerDemo extends Activity {
 	private Long _downloadId;
     private DownloadResultReceiver _receiver;
 	
-	private String TAG = "DownloadManagerDemo";
+	private String filePath;
 
 	
 	private Handler _handler = new Handler()
@@ -61,8 +61,9 @@ public class DownloadManagerDemo extends Activity {
 				_progressDialog.setMax(max);
 				_progressDialog.setProgress(cur);
 				_progressDialog.show();
-			}else{
+			}else if(status == DownloadManager.STATUS_SUCCESSFUL){
 				_progressDialog.dismiss();
+				Toast.makeText(DownloadManagerDemo.this, "下载成功，文件保存路径:"+filePath, Toast.LENGTH_SHORT).show();
 			
 			}
 					
@@ -106,7 +107,7 @@ public class DownloadManagerDemo extends Activity {
 		_progressDialog.setCanceledOnTouchOutside(false);
 		
 		
-	
+	    filePath = getSdSavePath();
 		_downloadUtil = new DownloadManagerUtil(
 				(DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE));		
 		_btn_download.setOnClickListener(new View.OnClickListener() {
@@ -114,7 +115,7 @@ public class DownloadManagerDemo extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub		
-				_downloadId = _downloadUtil.startDownload(HttpConstants.DownloadUrl,Uri.fromFile(new File(getSdSavePath())));
+				_downloadId = _downloadUtil.startDownload(HttpConstants.DownloadUrl,Uri.fromFile(new File(filePath)));
 				
 				observer = new DownloadStatusObserver(_handler);
 				DownloadManagerDemo.this.getContentResolver().registerContentObserver(LibConstant.DownloadInfoDataBase_ContentUri, true, observer);
