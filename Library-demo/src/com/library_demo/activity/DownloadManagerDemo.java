@@ -6,6 +6,7 @@
 package com.library_demo.activity;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 
 import com.androidlibrary.lib.LibConstant;
@@ -64,8 +65,7 @@ public class DownloadManagerDemo extends Activity {
 				_progressDialog.dismiss();
 			
 			}
-			
-			
+					
 		}
 	};
 	
@@ -95,12 +95,9 @@ public class DownloadManagerDemo extends Activity {
 		}
 	}
 	
-	
-	
 	private void inital()
 	{
 	
-		
 		_btn_download = (Button)findViewById(R.id.Btn_download);
 		_progressDialog = new ProgressDialog(this);
 		_progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
@@ -117,7 +114,7 @@ public class DownloadManagerDemo extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub		
-				_downloadId = _downloadUtil.startDownload(HttpConstants.DownloadUrl);
+				_downloadId = _downloadUtil.startDownload(HttpConstants.DownloadUrl,Uri.fromFile(new File(getSdSavePath())));
 				
 				observer = new DownloadStatusObserver(_handler);
 				DownloadManagerDemo.this.getContentResolver().registerContentObserver(LibConstant.DownloadInfoDataBase_ContentUri, true, observer);
@@ -135,6 +132,17 @@ public class DownloadManagerDemo extends Activity {
 				Environment
 						.getExternalStoragePublicDirectory(ConfigConstant.DownloadFileDirName),
 				ConfigConstant.YcbApkName);
+		File dir = file.getParentFile();
+		if(!dir.exists())
+			dir.mkdirs();
+		
+		if(!file.exists())
+			try {
+				file.createNewFile();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		return file.toString();
 	}
 	private class DownloadStatusObserver extends ContentObserver {
@@ -171,9 +179,7 @@ public class DownloadManagerDemo extends Activity {
 						"application/vnd.android.package-archive");
 				startActivity(i);
 			}
-		}
-		
+		}	
 		
 	}
-
 }
