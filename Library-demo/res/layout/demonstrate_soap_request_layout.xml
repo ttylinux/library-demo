@@ -11,6 +11,8 @@
         android:text="RequestWeather"
         />
     
+
+    
     <TextView 
         android:id="@+id/tv_result"
         android:layout_width="wrap_content"
@@ -18,5 +20,5 @@
         android:layout_below="@+id/btn_request"
         android:layout_marginTop="10dp"
         />
-    
+
 </RelativeLayout>

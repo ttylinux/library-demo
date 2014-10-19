@@ -8,6 +8,8 @@ package com.library_demo.activity;
 
 import com.androidlibrary.lib.util.NetworkSoapUtil;
 import com.library_demo.R;
+
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
@@ -33,6 +35,7 @@ public class DemonstrateSoapRequest extends Activity{
 	private String _resultKey="getWeatherbyCityNameResult";
 	
 	private Button _btn_request;
+	private Button _tidBtn_request;
 	private TextView _tv_result;
 	private NetworkSoapUtil _request;
 	private Handler _handler = new Handler()
@@ -68,6 +71,7 @@ public class DemonstrateSoapRequest extends Activity{
 					public void run()
 					{
 						String result = _request.getWeatherByCityName(_theCityNameKey, "深圳", _methodName, _resultKey);
+					
 						Message msg = _handler.obtainMessage();
 						msg.obj = result;
 					    _handler.sendMessage(msg);
@@ -77,6 +81,8 @@ public class DemonstrateSoapRequest extends Activity{
 				}.start();
 			}
 		});
+		
+
 		
 	}
 
