@@ -18,8 +18,8 @@ public class MainActivity extends Activity {
 	
 	private ListView _listView;
 	
-	private String[] demos = {"DownloadManager Demo"};
-	private String[] classNames = {"com.library_demo.activity.DownloadManagerDemo"};
+	private String[] demos = {"DownloadManager Demo","Make a Request, which is based on Soap protocol"};
+	private String[] classNames = {"com.library_demo.activity.DownloadManagerDemo","com.library_demo.activity.DemonstrateSoapRequest"};
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +43,7 @@ public class MainActivity extends Activity {
 				} catch (ClassNotFoundException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-					Toast.makeText(MainActivity.this, "没有找到这个类"+classNames[position], Toast.LENGTH_SHORT).show();
+					Toast.makeText(MainActivity.this, ""+classNames[position], Toast.LENGTH_SHORT).show();
 				}
 				
 			}

@@ -36,6 +36,9 @@
         <activity 
             android:name=".activity.DownloadManagerDemo"
             />
+        <activity 
+            android:name=".activity.DemonstrateSoapRequest"
+            />
     </application>
 
 </manifest>
