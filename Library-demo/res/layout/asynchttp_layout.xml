@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/tv_authName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:text="AuthUserName:" />
+
+    <EditText
+        android:id="@+id/edit_authName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/tv_authName"
+        android:hint="AuthUserName" />
+
+    <TextView
+        android:id="@+id/tv_authPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_authName"
+        android:layout_below="@+id/edit_authName"
+        android:layout_marginTop="20dp"
+        android:text="AuthPassword:" />
+
+    <EditText
+        android:id="@+id/edit_authPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edit_authName"
+        android:layout_below="@+id/edit_authName"
+        android:layout_marginTop="10dp"
+        android:hint="AuthPassword"
+        android:inputType="textPassword" />
+    
+    
+    <Button 
+        android:id="@+id/btn_requestWithoutAuth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_authPassword"
+        android:layout_marginTop="30dp"
+        android:layout_alignParentLeft="true"
+        android:text="RequestWithoutAuth"
+        />
+
+    <Button 
+        android:id="@+id/btn_requestWithAuth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_requestWithoutAuth"
+        android:layout_marginTop="10dp"
+        android:layout_alignLeft="@+id/btn_requestWithoutAuth"
+        android:text="RequestWithAuth"
+        />
+    
+    <TextView 
+        android:id="@+id/tv_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_requestWithAuth"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentLeft="true"
+        android:text="waiting for the result.."
+        />
+    
+    
+</RelativeLayout>
