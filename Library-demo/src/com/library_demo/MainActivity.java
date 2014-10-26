@@ -18,8 +18,8 @@ public class MainActivity extends Activity {
 	
 	private ListView _listView;
 	
-	private String[] demos = {"DownloadManager Demo","Make a Request, which is based on Soap protocol"};
-	private String[] classNames = {"com.library_demo.activity.DownloadManagerDemo","com.library_demo.activity.DemonstrateSoapRequest"};
+	private String[] demos = {"DownloadManager Demo","Make a Request, which is based on Soap protocol","ValueUtil"};
+	private String[] classNames = {"com.library_demo.activity.DownloadManagerDemo","com.library_demo.activity.DemonstrateSoapRequest","com.library_demo.activity.DemonstrateValueUtilUsage"};
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

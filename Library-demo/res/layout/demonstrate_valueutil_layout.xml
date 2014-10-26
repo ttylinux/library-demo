@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <EditText 
+        android:id="@+id/edit__hasDecimal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:hint="@string/valuewith_decimal_hint"
+        />
+    
+      <TextView 
+          android:id="@+id/tv_resultWithOutDecimal"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/edit__hasDecimal"
+          android:layout_alignLeft="@+id/edit__hasDecimal"
+          android:layout_marginTop="10dp"
+          android:hint="@string/value_wihout_decimal_hint"
+          />
+      
+      <Button 
+          android:id="@+id/btn_convert"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/convert"
+          android:layout_below="@+id/tv_resultWithOutDecimal"
+          android:layout_marginTop="10dp"
+          android:layout_alignLeft="@+id/tv_resultWithOutDecimal"
+          android:onClick="getValueWithoutDecimal"
+          />
+
+      
+        <EditText 
+        android:id="@+id/edit__morethanTwoDecimal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:layout_below="@+id/btn_convert"
+        android:layout_alignLeft="@+id/btn_convert"
+        android:layout_marginTop="10dp"
+        android:hint="@string/value_with_morethan_two_decimal"
+        />
+    
+      <TextView 
+          android:id="@+id/tv_resultWithTwoDecimal"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/edit__morethanTwoDecimal"
+          android:layout_alignLeft="@+id/edit__morethanTwoDecimal"
+          android:layout_marginTop="10dp"
+          android:hint="@string/value_with_only_two_decimal"
+          />
+      
+      <Button 
+          android:id="@+id/btn_convert2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/convert"
+          android:layout_below="@+id/tv_resultWithTwoDecimal"
+          android:layout_marginTop="10dp"
+          android:layout_alignLeft="@+id/tv_resultWithTwoDecimal"
+          android:onClick="getValueWithTwoDecimal"
+          />
+      
+</RelativeLayout>

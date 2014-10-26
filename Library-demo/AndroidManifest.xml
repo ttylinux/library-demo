@@ -39,6 +39,9 @@
         <activity 
             android:name=".activity.DemonstrateSoapRequest"
             />
+        <activity 
+            android:name=".activity.DemonstrateValueUtilUsage"
+            />
     </application>
 
 </manifest>
