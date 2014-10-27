@@ -12,4 +12,8 @@
     <string name="value_with_only_two_decimal">13.45</string>
     <string name="convert">convert</string>
 
+    <string name="dialog_title">This CustomDialog Title</string>
+    <string name="BtnOk">OK</string>
+    <string name="BtnCancle">Cancle</string>
+    <string name="showDialog">ShowDialog</string>
 </resources>

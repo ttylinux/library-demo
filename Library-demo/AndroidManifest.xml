@@ -42,6 +42,9 @@
         <activity 
             android:name=".activity.DemonstrateValueUtilUsage"
             />
+        <activity 
+            android:name=".activity.DemonstrateCustomDialogActivity"
+            />
     </application>
 
 </manifest>
