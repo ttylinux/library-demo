@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="10"
+        android:minSdkVersion="11"
         android:targetSdkVersion="14" />
     
     <uses-permission 
@@ -52,6 +52,9 @@
            <activity 
             android:name="com.androidlibrary.baidumap.activity.ShowLocationActivity"
             ></activity>
+           <activity 
+               android:name=".activity.ActivityUseFragment"
+               />
     </application>
 
 </manifest>
