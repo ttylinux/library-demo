@@ -18,12 +18,16 @@ public class MainActivity extends Activity {
 
 	private String[] demos = { "DownloadManager Demo",
 			"Make a Request, which is based on Soap protocol", "ValueUtil",
-			"CustomDialog , use custom layout" };
+			"CustomDialog , use custom layout",
+			"Demonstrate using the lib activity"
+	      };
 	private String[] classNames = {
 			"com.library_demo.activity.DownloadManagerDemo",
 			"com.library_demo.activity.DemonstrateSoapRequest",
 			"com.library_demo.activity.DemonstrateValueUtilUsage",
-			"com.library_demo.activity.DemonstrateCustomDialogActivity"};
+			"com.library_demo.activity.DemonstrateCustomDialogActivity",
+			"com.library_demo.activity.DemonstrateUseLibActivity"
+	       };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

@@ -45,6 +45,13 @@
         <activity 
             android:name=".activity.DemonstrateCustomDialogActivity"
             />
+        
+        <activity 
+            android:name=".activity.DemonstrateUseLibActivity"
+            />
+           <activity 
+            android:name="com.androidlibrary.baidumap.activity.ShowLocationActivity"
+            ></activity>
     </application>
 
 </manifest>
