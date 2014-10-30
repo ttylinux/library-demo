@@ -55,6 +55,9 @@
            <activity 
                android:name=".activity.ActivityUseFragment"
                />
+           <activity 
+               android:name=".activity.DemonstrateUseCommontabActivity"
+               />
     </application>
 
 </manifest>

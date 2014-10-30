@@ -20,7 +20,8 @@ public class MainActivity extends Activity {
 			"Make a Request, which is based on Soap protocol", "ValueUtil",
 			"CustomDialog , use custom layout",
 			"Demonstrate using the lib activity",
-			"Use a Fragment from a Library Project"
+			"Use a Fragment from a Library Project",
+			"Use a common tabActivity"
 	      };
 	private String[] classNames = {
 			"com.library_demo.activity.DownloadManagerDemo",
@@ -28,7 +29,8 @@ public class MainActivity extends Activity {
 			"com.library_demo.activity.DemonstrateValueUtilUsage",
 			"com.library_demo.activity.DemonstrateCustomDialogActivity",
 			"com.library_demo.activity.DemonstrateUseLibActivity",
-			"com.library_demo.activity.ActivityUseFragment"
+			"com.library_demo.activity.ActivityUseFragment",
+			"com.library_demo.activity.DemonstrateUseCommontabActivity"
 	       };
 
 	@Override
