@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <item name="tab_bg_selected" type="drawable">#0000CD</item>
+    <item name="tab_bg_default" type="drawable">#D3D3D3</item>
+    
+</resources>
