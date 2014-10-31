@@ -15,5 +15,7 @@ public class HttpConstants {
 	public static final String UTFCharSet="UTF-8";
 	
 	public static final String BaiduUrl="http://www.baidu.com";
+	
+	public static final String GitHubUrl="https://github.com/";
 }
 

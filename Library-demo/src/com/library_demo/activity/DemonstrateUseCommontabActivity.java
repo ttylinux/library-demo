@@ -30,9 +30,10 @@ public class DemonstrateUseCommontabActivity extends CommonTabActivity {
 		Intent twoIntent = new Intent(this,DemonstrateValueUtilUsage.class);
 		Intent threeIntent = new Intent(this,DemonstrateCustomDialogActivity.class);
 		Intent fourIntent = new Intent(this,DemonstrateUseLibActivity.class);
+		Intent fiveIntent = new Intent(this,DemonstrateWebViewUsage.class);
 		
-		TabItem one = new TabItem("SoapRequest",oneIntent,"soapRequest");
-		one.setTabBg(R.drawable.tab_bg);
+//		TabItem one = new TabItem("SoapRequest",oneIntent,"soapRequest");
+//		one.setTabBg(R.drawable.tab_bg);
 		TabItem two = new TabItem("ValueUtil",twoIntent,"valueUtil");
 		two.setTabBg(R.drawable.tab_bg);
 		TabItem three = new TabItem("CustomDialog",threeIntent,"customDialog");
@@ -40,10 +41,15 @@ public class DemonstrateUseCommontabActivity extends CommonTabActivity {
 		TabItem four = new TabItem("UseLib",fourIntent,"useLib");
 		four.setTabBg(R.drawable.tab_bg);
 		
-		items.add(one);
+		TabItem five = new TabItem("WebView",fiveIntent,"WebView");
+		five.setTabBg(R.drawable.tab_bg);
+		five.setRecreateState(true);
+		
+//		items.add(one);
 		items.add(two);
 		items.add(three);
 		items.add(four);
+		items.add(five);
 		
 	}
 
