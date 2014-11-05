@@ -16,4 +16,7 @@
     <string name="BtnOk">OK</string>
     <string name="BtnCancle">Cancle</string>
     <string name="showDialog">ShowDialog</string>
+    
+    <string name="btnStart">Start</string>
+    <string name="btnStop">Stop</string>
 </resources>
