@@ -21,7 +21,8 @@ public class MainActivity extends Activity {
 			"CustomDialog , use custom layout",
 			"Demonstrate using the lib activity",
 			"Use a Fragment from a Library Project",
-			"Use a common tabActivity"
+			"Use a common tabActivity",
+			"show breakpoint transmition usage"
 	      };
 	private String[] classNames = {
 			"com.library_demo.activity.DownloadManagerDemo",
@@ -30,7 +31,8 @@ public class MainActivity extends Activity {
 			"com.library_demo.activity.DemonstrateCustomDialogActivity",
 			"com.library_demo.activity.DemonstrateUseLibActivity",
 			"com.library_demo.activity.ActivityUseFragment",
-			"com.library_demo.activity.DemonstrateUseCommontabActivity"
+			"com.library_demo.activity.DemonstrateUseCommontabActivity",
+			"com.library_demo.activity.ShowBreakPointTransmitionActivity"
 	       };
 
 	@Override
