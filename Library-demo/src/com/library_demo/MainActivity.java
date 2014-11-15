@@ -22,7 +22,8 @@ public class MainActivity extends Activity {
 			"Demonstrate using the lib activity",
 			"Use a Fragment from a Library Project",
 			"Use a common tabActivity",
-			"show breakpoint transmition usage"
+			"show breakpoint transmition usage",
+			"Use a custom datePicker"
 	      };
 	private String[] classNames = {
 			"com.library_demo.activity.DownloadManagerDemo",
@@ -32,7 +33,8 @@ public class MainActivity extends Activity {
 			"com.library_demo.activity.DemonstrateUseLibActivity",
 			"com.library_demo.activity.ActivityUseFragment",
 			"com.library_demo.activity.DemonstrateUseCommontabActivity",
-			"com.library_demo.activity.ShowBreakPointTransmitionActivity"
+			"com.library_demo.activity.ShowBreakPointTransmitionActivity",
+			"com.library_demo.activity.UseCustomDatePicker"
 	       };
 
 	@Override

@@ -70,7 +70,7 @@ public class ShowBreakPointTransmitionActivity extends Activity {
 					@Override
 					public void onLoading(long count, long current) {
 
-						_tv_process.setText("ÏÂÔØ½ø¶È£º" + current + "/" + count);
+						_tv_process.setText("DownloadProgress£º" + current + "/" + count);
 					};
 
 					@Override

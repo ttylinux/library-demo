@@ -64,6 +64,10 @@
            <activity 
                android:name=".activity.ShowBreakPointTransmitionActivity"
                />
+           <activity 
+               android:name=".activity.UseCustomDatePicker"
+               
+               />
     </application>
 
 </manifest>
