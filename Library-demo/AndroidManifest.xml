@@ -7,16 +7,10 @@
     <uses-sdk
         android:minSdkVersion="11"
         android:targetSdkVersion="14" />
-    
-    <uses-permission 
-        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-        />
-    <uses-permission 
-        android:name="android.permission.READ_EXTERNAL_STORAGE"
-        />
-    <uses-permission 
-        android:name="android.permission.INTERNET"
-        />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -32,42 +26,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
-        <activity 
-            android:name=".activity.DownloadManagerDemo"
-            />
-        <activity 
-            android:name=".activity.DemonstrateSoapRequest"
-            />
-        <activity 
-            android:name=".activity.DemonstrateValueUtilUsage"
-            />
-        <activity 
-            android:name=".activity.DemonstrateCustomDialogActivity"
-            />
-        
-        <activity 
-            android:name=".activity.DemonstrateUseLibActivity"
-            />
-           <activity 
-            android:name="com.androidlibrary.baidumap.activity.ShowLocationActivity"
-            ></activity>
-           <activity 
-               android:name=".activity.ActivityUseFragment"
-               />
-           <activity 
-               android:name=".activity.DemonstrateUseCommontabActivity"
-               />
-           <activity
-               android:name=".activity.DemonstrateWebViewUsage"
-               />
-           <activity 
-               android:name=".activity.ShowBreakPointTransmitionActivity"
-               />
-           <activity 
-               android:name=".activity.UseCustomDatePicker"
-               
-               />
+        <activity android:name=".activity.DownloadManagerDemo" />
+        <activity android:name=".activity.DemonstrateSoapRequest" />
+        <activity android:name=".activity.DemonstrateValueUtilUsage" />
+        <activity android:name=".activity.DemonstrateCustomDialogActivity" />
+        <activity android:name=".activity.DemonstrateUseLibActivity" />
+        <activity android:name="com.androidlibrary.baidumap.activity.ShowLocationActivity" >
+        </activity>
+        <activity android:name=".activity.ActivityUseFragment" />
+        <activity android:name=".activity.DemonstrateUseCommontabActivity" />
+        <activity android:name=".activity.DemonstrateWebViewUsage" />
+        <activity android:name=".activity.ShowBreakPointTransmitionActivity" />
+        <activity android:name=".activity.UseCustomDatePicker" />
+        <activity android:name=".activity.ActivityWithRichTextView"/>
     </application>
 
 </manifest>

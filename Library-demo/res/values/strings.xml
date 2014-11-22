@@ -4,19 +4,20 @@
     <string name="app_name">Library-demo</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    
     <string name="download_btn">下载用车邦</string>
     <string name="valuewith_decimal_hint">13.45</string>
     <string name="value_wihout_decimal_hint">13</string>
     <string name="value_with_morethan_two_decimal">13.4567</string>
     <string name="value_with_only_two_decimal">13.45</string>
     <string name="convert">convert</string>
-
     <string name="dialog_title">This CustomDialog Title</string>
     <string name="BtnOk">OK</string>
     <string name="BtnCancle">Cancle</string>
     <string name="showDialog">ShowDialog</string>
-    
     <string name="btnStart">Start</string>
     <string name="btnStop">Stop</string>
+    
+    
+    <string name="richtextview">We have walked 100 mile</string>
+
 </resources>

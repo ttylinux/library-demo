@@ -20,7 +20,7 @@ public class MainActivity extends Activity {
       "Make a Request, which is based on Soap protocol", "ValueUtil",
       "CustomDialog , use custom layout", "Demonstrate using the lib activity",
       "Use a Fragment from a Library Project", "Use a common tabActivity",
-      "show breakpoint transmition usage", "Use a custom datePicker"};
+      "show breakpoint transmition usage", "Use a custom datePicker","show RichTextView"};
   private String[] classNames = {"com.library_demo.activity.DownloadManagerDemo",
       "com.library_demo.activity.DemonstrateSoapRequest",
       "com.library_demo.activity.DemonstrateValueUtilUsage",
@@ -29,7 +29,8 @@ public class MainActivity extends Activity {
       "com.library_demo.activity.ActivityUseFragment",
       "com.library_demo.activity.DemonstrateUseCommontabActivity",
       "com.library_demo.activity.ShowBreakPointTransmitionActivity",
-      "com.library_demo.activity.UseCustomDatePicker"};
+      "com.library_demo.activity.UseCustomDatePicker",
+      "com.library_demo.activity.ActivityWithRichTextView"};
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
