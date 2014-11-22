@@ -1,7 +1,6 @@
-/** 
- * @author LuShuWei E-mail:albertxiaoyu@163.com 
- * @version 创建时间：2014-10-28 下午9:04:14 
- * 类说明 
+/**
+ * @author LuShuWei E-mail:albertxiaoyu@163.com
+ * @version 创建时间：2014-10-28 下午9:04:14 类说明
  */
 
 package com.library_demo.activity;
@@ -18,30 +17,29 @@ import android.view.View;
 
 public class ActivityUseFragment extends Activity {
 
-	private int times;
-	public void onCreate(Bundle state) {
-		super.onCreate(state);
-		setContentView(R.layout.demonstrate_use_fragment);
-	}
+  private int times;
 
-	public void refresh(View v) {
-		JSONArray array = new JSONArray();
-		JSONObject one = new JSONObject();
-		try {
-			times++;
-			one.put("Name", "Albert");
-			one.put("time", times);
+  public void onCreate(Bundle state) {
+    super.onCreate(state);
+    setContentView(R.layout.demonstrate_use_fragment);
+  }
 
-			array.put(one);
-			ShowLocationInMapFragment f = ShowLocationInMapFragment
-					.newInstance(array);
-			getFragmentManager().beginTransaction()
-					.replace(R.id.fragment_area, f).commit();
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+  public void refresh(View v) {
+    JSONArray array = new JSONArray();
+    JSONObject one = new JSONObject();
+    try {
+      times++;
+      one.put("Name", "Albert");
+      one.put("time", times);
 
-	}
+      array.put(one);
+      ShowLocationInMapFragment f = ShowLocationInMapFragment.newInstance(array);
+      getFragmentManager().beginTransaction().replace(R.id.fragment_area, f).commit();
+    } catch (JSONException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
+
+  }
 
 }

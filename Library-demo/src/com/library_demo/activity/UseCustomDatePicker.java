@@ -10,26 +10,28 @@ import android.widget.Toast;
 
 public class UseCustomDatePicker extends Activity implements DatePickerListener {
 
-	
 
-	public void onCreate(Bundle state) {
-		super.onCreate(state);
-		setContentView(R.layout.use_custom_dialog);
 
-	
-	}
+  public void onCreate(Bundle state) {
+    super.onCreate(state);
+    setContentView(R.layout.use_custom_dialog);
 
-	public void show(View v) {
 
-		CustomDatePickerDialog dialog = new CustomDatePickerDialog(this,this);
-		dialog.init();
-		
-	}
+  }
 
-	@Override
-	public void onDateChangeListener(int year, int month, int dayOfmonth) {
-		// TODO Auto-generated method stub
-		Toast.makeText(this, "select date:" + year+"-"+month+"-"+dayOfmonth, Toast.LENGTH_SHORT).show();
-	}
+  public void show(View v) {
+
+    CustomDatePickerDialog dialog = new CustomDatePickerDialog(this, this);
+    dialog.init();
+
+  }
+
+  @Override
+  public void onDateChangeListener(int year, int month, int dayOfmonth) {
+    // TODO Auto-generated method stub
+    Toast
+        .makeText(this, "select date:" + year + "-" + month + "-" + dayOfmonth, Toast.LENGTH_SHORT)
+        .show();
+  }
 
 }

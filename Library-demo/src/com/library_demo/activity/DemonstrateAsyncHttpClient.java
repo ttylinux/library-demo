@@ -1,6 +1,5 @@
 /*
- *  @author LuShuWei  E-mail:albertxiaoyu@163.com
- *  ´´½¨Ê±¼ä 2014-10-20
+ * @author LuShuWei E-mail:albertxiaoyu@163.com ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ 2014-10-20
  */
 
 package com.library_demo.activity;
@@ -27,95 +26,92 @@ import android.widget.Toast;
 
 public class DemonstrateAsyncHttpClient extends Activity {
 
-    private EditText authName;
-    private EditText password;
-	private Button btnRequestWithoutAuth;
-	private Button btnRequestAuth;
-	private TextView result;
+  private EditText authName;
+  private EditText password;
+  private Button btnRequestWithoutAuth;
+  private Button btnRequestAuth;
+  private TextView result;
 
-	public void onCreate(Bundle state) {
-		super.onCreate(state);
-		setContentView(R.layout.asynchttp_layout);
-		ButterKnife.inject(this);
-		inital();
-	}
+  public void onCreate(Bundle state) {
+    super.onCreate(state);
+    setContentView(R.layout.asynchttp_layout);
+    ButterKnife.inject(this);
+    inital();
+  }
 
-	private void inital() {
-		
-		result = (TextView)findViewById(R.id.tv_result);
-		authName = (EditText)findViewById(R.id.edit_authName);
-		password = (EditText)findViewById(R.id.edit_authPassword);
-		btnRequestWithoutAuth = (Button)findViewById(R.id.btn_requestWithoutAuth);
-		btnRequestAuth = (Button)findViewById(R.id.btn_requestWithAuth);
-		btnRequestAuth.setOnClickListener(new View.OnClickListener() {
+  private void inital() {
 
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
+    result = (TextView) findViewById(R.id.tv_result);
+    authName = (EditText) findViewById(R.id.edit_authName);
+    password = (EditText) findViewById(R.id.edit_authPassword);
+    btnRequestWithoutAuth = (Button) findViewById(R.id.btn_requestWithoutAuth);
+    btnRequestAuth = (Button) findViewById(R.id.btn_requestWithAuth);
+    btnRequestAuth.setOnClickListener(new View.OnClickListener() {
 
-				String userName = authName.getText().toString();
-				String strPassword = password.getText().toString();
-				if (!userName.equals("") && !strPassword.equals("")) {
-					AsyncHttpClientUtil.getClient().setBasicAuth(userName,
-							strPassword);
+      @Override
+      public void onClick(View arg0) {
+        // TODO Auto-generated method stub
 
-					AsyncHttpClientUtil.get(HttpConstants.TopAllUrl, null, new AsyncHttpResponseHandler(){
+        String userName = authName.getText().toString();
+        String strPassword = password.getText().toString();
+        if (!userName.equals("") && !strPassword.equals("")) {
+          AsyncHttpClientUtil.getClient().setBasicAuth(userName, strPassword);
 
-						@Override
-						public void onFailure(int arg0, Header[] arg1,
-								byte[] arg2, Throwable arg3) {
-							// TODO Auto-generated method stub
-							
-						}
+          AsyncHttpClientUtil.get(HttpConstants.TopAllUrl, null, new AsyncHttpResponseHandler() {
 
-						@Override
-						public void onSuccess(int arg0, Header[] arg1,
-								byte[] arg2) {
-							// TODO Auto-generated method stub
-							try {
-								result.setText(new String(arg2,HttpConstants.UTFCharSet));
-							} catch (UnsupportedEncodingException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							}
-												
-						}});
-				} else {
-					Toast.makeText(DemonstrateAsyncHttpClient.this,
-							"Please input authUserName and authPassword",
-							Toast.LENGTH_SHORT).show();
-				}
+            @Override
+            public void onFailure(int arg0, Header[] arg1, byte[] arg2, Throwable arg3) {
+              // TODO Auto-generated method stub
 
-			}
-		});
-		
-		btnRequestWithoutAuth.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				AsyncHttpClientUtil.get(HttpConstants.BaiduUrl, null, new AsyncHttpResponseHandler(){
+            }
 
-					@Override
-					public void onFailure(int arg0, Header[] arg1, byte[] arg2,
-							Throwable arg3) {
-						// TODO Auto-generated method stub
-						
-					}
+            @Override
+            public void onSuccess(int arg0, Header[] arg1, byte[] arg2) {
+              // TODO Auto-generated method stub
+              try {
+                result.setText(new String(arg2, HttpConstants.UTFCharSet));
+              } catch (UnsupportedEncodingException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+              }
 
-					@Override
-					public void onSuccess(int arg0, Header[] arg1, byte[] arg2) {
-						// TODO Auto-generated method stub
-						try {
-							result.setText(new String(arg2,HttpConstants.UTFCharSet));
-						} catch (UnsupportedEncodingException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-					}});
-			}
-		});
-		
-	}
+            }
+          });
+        } else {
+          Toast.makeText(DemonstrateAsyncHttpClient.this,
+              "Please input authUserName and authPassword", Toast.LENGTH_SHORT).show();
+        }
+
+      }
+    });
+
+    btnRequestWithoutAuth.setOnClickListener(new View.OnClickListener() {
+
+      @Override
+      public void onClick(View arg0) {
+        // TODO Auto-generated method stub
+        AsyncHttpClientUtil.get(HttpConstants.BaiduUrl, null, new AsyncHttpResponseHandler() {
+
+          @Override
+          public void onFailure(int arg0, Header[] arg1, byte[] arg2, Throwable arg3) {
+            // TODO Auto-generated method stub
+
+          }
+
+          @Override
+          public void onSuccess(int arg0, Header[] arg1, byte[] arg2) {
+            // TODO Auto-generated method stub
+            try {
+              result.setText(new String(arg2, HttpConstants.UTFCharSet));
+            } catch (UnsupportedEncodingException e) {
+              // TODO Auto-generated catch block
+              e.printStackTrace();
+            }
+          }
+        });
+      }
+    });
+
+  }
 
 }
