@@ -19,5 +19,6 @@
     
     
     <string name="richtextview">We have walked 100 mile</string>
+    <string name="scrollTextViewStr">We have walked 100 mile.We have done a lot of thing.</string>
 
 </resources>
