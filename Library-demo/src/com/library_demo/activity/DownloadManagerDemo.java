@@ -37,16 +37,16 @@ public class DownloadManagerDemo extends Activity {
 
   private static final String TAG = "DownloadManager";
 
-  private Button _btn_download;
-  private ProgressDialog _progressDialog;
-  private DownloadManagerUtil _downloadUtil;
+  private Button btnDownload;
+  private ProgressDialog progressDialog;
+  private DownloadManagerUtil downloadUtil;
   private DownloadStatusObserver observer;
-  private Long _downloadId;
-  private DownloadResultReceiver _receiver;
+  private Long downloadId;
+  private DownloadResultReceiver receiver;
 
   private String filePath;
 
-  private Handler _handler = new Handler() {
+  private Handler handler = new Handler() {
     @Override
     public void handleMessage(Message msg) {
 
@@ -56,11 +56,11 @@ public class DownloadManagerDemo extends Activity {
       int status = one.get(DownloadManager.COLUMN_STATUS);
 
       if (status == DownloadManager.STATUS_RUNNING && max > 0) {
-        _progressDialog.setMax(max);
-        _progressDialog.setProgress(cur);
-        _progressDialog.show();
+        progressDialog.setMax(max);
+        progressDialog.setProgress(cur);
+        progressDialog.show();
       } else if (status == DownloadManager.STATUS_SUCCESSFUL) {
-        _progressDialog.dismiss();
+        progressDialog.dismiss();
         Toast.makeText(DownloadManagerDemo.this, "下载成功，文件保存路径:" + filePath, Toast.LENGTH_SHORT)
             .show();
 
@@ -78,10 +78,10 @@ public class DownloadManagerDemo extends Activity {
   @Override
   public void onPause() {
     super.onPause();
-    if (_receiver != null) {
+    if (receiver != null) {
       try {
 
-        unregisterReceiver(_receiver);
+        unregisterReceiver(receiver);
       } catch (Exception e) {
 
         Log.e(TAG, "Already unregister receiver !!");
@@ -94,29 +94,29 @@ public class DownloadManagerDemo extends Activity {
 
   private void inital() {
 
-    _btn_download = (Button) findViewById(R.id.Btn_download);
-    _progressDialog = new ProgressDialog(this);
-    _progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-    _progressDialog.setTitle("正在下载...");
-    _progressDialog.setCancelable(false);
-    _progressDialog.setCanceledOnTouchOutside(false);
+    btnDownload = (Button) findViewById(R.id.Btn_download);
+    progressDialog = new ProgressDialog(this);
+    progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+    progressDialog.setTitle("正在下载...");
+    progressDialog.setCancelable(false);
+    progressDialog.setCanceledOnTouchOutside(false);
 
     filePath = getSdSavePath();
-    _downloadUtil =
+    downloadUtil =
         new DownloadManagerUtil((DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE));
-    _btn_download.setOnClickListener(new View.OnClickListener() {
+    btnDownload.setOnClickListener(new View.OnClickListener() {
 
       @Override
       public void onClick(View v) {
         // TODO Auto-generated method stub
-        _downloadId =
-            _downloadUtil.startDownload(HttpConstants.DownloadUrl, Uri.fromFile(new File(filePath)));
+        downloadId =
+            downloadUtil.startDownload(HttpConstants.DownloadUrl, Uri.fromFile(new File(filePath)));
 
-        observer = new DownloadStatusObserver(_handler);
+        observer = new DownloadStatusObserver(handler);
         DownloadManagerDemo.this.getContentResolver().registerContentObserver(
             LibConstant.DownloadInfoDataBase_ContentUri, true, observer);
-        _receiver = new DownloadResultReceiver();
-        DownloadManagerDemo.this.registerReceiver(_receiver, new IntentFilter(
+        receiver = new DownloadResultReceiver();
+        DownloadManagerDemo.this.registerReceiver(receiver, new IntentFilter(
             DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 
       }
@@ -153,9 +153,9 @@ public class DownloadManagerDemo extends Activity {
     @Override
     public void onChange(boolean selfChange) {
 
-      Message msg = _handler.obtainMessage();
-      msg.obj = _downloadUtil.getCurDownloadInfo(_downloadId);
-      _handler.sendMessage(msg);
+      Message msg = handler.obtainMessage();
+      msg.obj = downloadUtil.getCurDownloadInfo(downloadId);
+      handler.sendMessage(msg);
     }
 
   }
@@ -166,7 +166,7 @@ public class DownloadManagerDemo extends Activity {
     public void onReceive(Context context, Intent intent) {
       // TODO Auto-generated method stub
       if (intent.getAction().equals(DownloadManager.ACTION_DOWNLOAD_COMPLETE)) {
-        HashMap<String, Object> one = _downloadUtil.getCurDownloadInfo(_downloadId);
+        HashMap<String, Object> one = downloadUtil.getCurDownloadInfo(downloadId);
         String filePath = (String) one.get(DownloadManager.COLUMN_LOCAL_FILENAME);
 
         Intent i = new Intent(Intent.ACTION_VIEW);

@@ -20,9 +20,9 @@ import android.widget.Toast;
 
 public class ShowBreakPointTransmitionActivity extends Activity {
 
-  private TextView _tv_process;
-  private FinalHttp _fh;
-  private HttpHandler _handler;
+  private TextView tvProcess;
+  private FinalHttp fh;
+  private HttpHandler handler;
 
   public void onCreate(Bundle state) {
     super.onCreate(state);
@@ -31,14 +31,14 @@ public class ShowBreakPointTransmitionActivity extends Activity {
   }
 
   private void inital() {
-    _tv_process = (TextView) findViewById(R.id.tv_process);
-    _fh = new FinalHttp();
+    tvProcess = (TextView) findViewById(R.id.tv_process);
+    fh = new FinalHttp();
 
   }
 
   public void stopDownload(View v) {
-    if (_handler != null) {
-      _handler.stop();
+    if (handler != null) {
+      handler.stop();
     } else {
       Toast.makeText(this, "Have not start yet.", Toast.LENGTH_SHORT).show();
     }
@@ -62,14 +62,14 @@ public class ShowBreakPointTransmitionActivity extends Activity {
       e1.printStackTrace();
     }
 
-    _handler =
-        _fh.download(HttpConstants.DownloadUrl, newFile.getAbsolutePath(), true,
+    handler =
+        fh.download(HttpConstants.DownloadUrl, newFile.getAbsolutePath(), true,
             new AjaxCallBack<File>() {
 
               @Override
               public void onLoading(long count, long current) {
 
-                _tv_process.setText("DownloadProgress��" + current + "/" + count);
+                tvProcess.setText("DownloadProgress��" + current + "/" + count);
               };
 
               @Override

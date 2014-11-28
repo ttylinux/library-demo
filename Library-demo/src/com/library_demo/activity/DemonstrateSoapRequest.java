@@ -24,22 +24,22 @@ import android.widget.TextView;
 public class DemonstrateSoapRequest extends Activity {
 
 
-  private String _nameSpace = "http://WebXml.com.cn/";
-  private String _serviceUrl = "http://www.webxml.com.cn/WebServices/WeatherWebService.asmx";
+  private String nameSpace = "http://WebXml.com.cn/";
+  private String serviceUrl = "http://www.webxml.com.cn/WebServices/WeatherWebService.asmx";
 
-  private String _methodName = "getWeatherbyCityName";
-  private String _theCityNameKey = "theCityName";
+  private String methodName = "getWeatherbyCityName";
+  private String theCityNameKey = "theCityName";
 
-  private String _resultKey = "getWeatherbyCityNameResult";
+  private String resultKey = "getWeatherbyCityNameResult";
 
-  private Button _btn_request;
-  private Button _tidBtn_request;
-  private TextView _tv_result;
-  private NetworkSoapUtil _request;
-  private Handler _handler = new Handler() {
+  private Button btnRequest;
+  private Button tidBtnRequest;
+  private TextView tvResult;
+  private NetworkSoapUtil request;
+  private Handler handler = new Handler() {
     @Override
     public void handleMessage(Message msg) {
-      _tv_result.setText(msg.obj + "");
+      tvResult.setText(msg.obj + "");
     }
   };
 
@@ -51,10 +51,10 @@ public class DemonstrateSoapRequest extends Activity {
   }
 
   private void inital() {
-    _btn_request = (Button) findViewById(R.id.btn_request);
-    _tv_result = (TextView) findViewById(R.id.tv_result);
-    _request = new NetworkSoapUtil(_nameSpace, _serviceUrl);
-    _btn_request.setOnClickListener(new View.OnClickListener() {
+    btnRequest = (Button) findViewById(R.id.btn_request);
+    tvResult = (TextView) findViewById(R.id.tv_result);
+    request = new NetworkSoapUtil(nameSpace, serviceUrl);
+    btnRequest.setOnClickListener(new View.OnClickListener() {
 
       @Override
       public void onClick(View v) {
@@ -63,11 +63,11 @@ public class DemonstrateSoapRequest extends Activity {
           @Override
           public void run() {
             String result =
-                _request.getWeatherByCityName(_theCityNameKey, "深圳", _methodName, _resultKey);
+                request.getWeatherByCityName(theCityNameKey, "深圳", methodName, resultKey);
 
-            Message msg = _handler.obtainMessage();
+            Message msg = handler.obtainMessage();
             msg.obj = result;
-            _handler.sendMessage(msg);
+            handler.sendMessage(msg);
 
           }
 

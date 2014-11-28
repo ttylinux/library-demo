@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
-  private ListView _listView;
+  private ListView listView;
 
   private String[] demos = {"DownloadManager Demo",
       "Make a Request, which is based on Soap protocol", "ValueUtil",
@@ -38,14 +38,14 @@ public class MainActivity extends Activity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    _listView = (ListView) findViewById(R.id.demoList);
+    listView = (ListView) findViewById(R.id.demoList);
 
     LinkedList<String> items = new LinkedList<String>();
     items.addAll(Arrays.asList(demos));
     ArrayAdapter<String> adapter =
         new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
-    _listView.setAdapter(adapter);
-    _listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+    listView.setAdapter(adapter);
+    listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
       @Override
       public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
